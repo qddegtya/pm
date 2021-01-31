@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-	<img width="500" src="media/preview.png" alt="pm">
+	<img width="500" src="https://github.com/qddegtya/pm/raw/master/media/preview.png" alt="pm">
   <br>
   <br>
   <br>
