@@ -32,7 +32,7 @@ $ npm install -D @atools/pm
 
 ```
 "scripts": {
-  "install": "./node_modules/.bin/pm run install"
+  "pm_install": "./node_modules/.bin/pm run install"
 }
 ```
 
