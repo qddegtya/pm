@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+const path = require('path')
+const { argv } = require("process");
+const PackageManager = require("../src");
+const { install } = require("../internal-handles/cmd");
+
+const cwd = process.cwd();
+
+const pm = new PackageManager({
+  config: path.join(cwd, "./.pmrc.json")
+});
+
+if (argv[2] === "run") {
+  pm.load("install", install);
+  pm.exec(argv[3]);
+} else {
+  console.log('[pm-helper] pm run [handle]');
+}
