@@ -1,6 +1,6 @@
 {
   "name": "@atools/pm",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a tiny package manager.",
   "bin": {
     "pm": "./bin/pm"
