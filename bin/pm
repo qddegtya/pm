@@ -5,14 +5,19 @@ const { argv } = require("process");
 const PackageManager = require("../src");
 const { install, uninstall } = require("../internal-handles/cmd");
 
+const cwd = process.cwd();
+let config = null;
+
+try {
+  config = require(path.resolve(cwd, "./.pmrc.js"));
+} catch (error) {
+  config = path.join(cwd, "./.pmrc.json");
+}
+
+const pm = new PackageManager({ config });
+
 pm.load("install", install);
 pm.load("uninstall", uninstall);
-
-const cwd = process.cwd();
-
-const pm = new PackageManager({
-  config: path.join(cwd, "./.pmrc.json"),
-});
 
 if (argv[2] === "run") {
   pm.exec(argv[3]);
