@@ -1,5 +1,5 @@
 {
-  "name": "pm",
+  "name": "@atools/pm",
   "version": "1.0.0",
   "description": "Tiny package manager.",
   "bin": {

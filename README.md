@@ -25,7 +25,7 @@
 ### Step 1
 
 ```
-$ npm install -D pm
+$ npm install -D @atools/pm
 ```
 
 ### Step 2
