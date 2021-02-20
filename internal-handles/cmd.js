@@ -22,4 +22,4 @@ exports.cmd = (command) => (pm) => {
 };
 
 exports.install = exports.cmd("npm i");
-exports.uninstall = exports.cmd("npm uninstall");
+exports.clean = exports.cmd("rm -rf node_modules");
