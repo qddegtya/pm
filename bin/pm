@@ -3,7 +3,7 @@
 const path = require("path");
 const { argv } = require("process");
 const PackageManager = require("../src");
-const { install, uninstall } = require("../internal-handles/cmd");
+const { install, clean } = require("../internal-handles/cmd");
 
 const cwd = process.cwd();
 let config = null;
@@ -17,7 +17,7 @@ try {
 const pm = new PackageManager({ config });
 
 pm.load("install", install);
-pm.load("uninstall", uninstall);
+pm.load("clean", clean);
 
 if (argv[2] === "run") {
   pm.exec(argv[3]);
