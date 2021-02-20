@@ -1,9 +1,9 @@
 {
   "name": "@atools/pm",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "a tiny package manager.",
   "bin": {
-    "pm": "./bin/pm"
+    "pm": "bin/pm"
   },
   "main": "src/index.js",
   "scripts": {
