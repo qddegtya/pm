@@ -5,6 +5,9 @@
   "bin": {
     "pm": "bin/pm"
   },
+  "files": [
+    "src"
+  ],
   "main": "src/index.js",
   "scripts": {
     "pm_install": "./bin/pm run install",
