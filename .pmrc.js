@@ -1,7 +1,7 @@
 const path = require("path");
 module.exports = {
   root: path.join(__dirname, "./_fixtures/packages"),
-  handles: {
+  hooks: {
     cmd: {
       beforeExec: function (cmd) {
         if (cmd === "npm i") {

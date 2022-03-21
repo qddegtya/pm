@@ -14,8 +14,9 @@ try {
   config = path.join(cwd, "./.pmrc.json");
 }
 
-const pm = new PackageManager({ config });
+const pm = new PackageManager({ handles: config.handles, config });
 
+// internal
 pm.load("install", install);
 pm.load("clean", clean);
 

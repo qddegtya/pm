@@ -4,7 +4,7 @@ exports.cmd = (command) => (pm) => {
   let hook = null;
 
   try {
-    hook = pm.configResolver.get("handles")["cmd"]["beforeExec"];
+    hook = pm.configResolver.get("hooks")["cmd"]["beforeExec"];
   } catch (error) {
     // pass
   }
