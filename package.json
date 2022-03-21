@@ -6,7 +6,8 @@
     "pm": "bin/pm"
   },
   "files": [
-    "src"
+    "src",
+    "internal-handles"
   ],
   "main": "src/index.js",
   "scripts": {
