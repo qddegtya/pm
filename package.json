@@ -11,5 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "xiaoa",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@root/walk": "^1.1.0"
+  }
 }

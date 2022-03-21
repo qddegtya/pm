@@ -1,0 +1,13 @@
+lockfileVersion: 5.3
+
+specifiers:
+  xajs: 1.x
+
+dependencies:
+  xajs: 1.0.13
+
+packages:
+
+  /xajs/1.0.13:
+    resolution: {integrity: sha512-B1IRrLl7CLvbh1DDbXvkBbPibensHVT9Q/xbIfGYVNoiQJHtczoak+rCQR7R5SMeGGj7BOFy/TmlmPc34nosDQ==}
+    dev: false

@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const Walk = require("@root/walk");
 
 /**
  * Tiny Package Manager
@@ -15,20 +16,30 @@ class PackageManager {
 
   walk(cb) {
     const ROOT_PATH = this.configResolver.get("root");
-    const dirs = fs.readdirSync(ROOT_PATH);
-    const getResolvePath = (dir) => path.join(ROOT_PATH, dir);
 
-    dirs
-      .filter((dir) => Package.isPackage(getResolvePath(dir)))
-      .map((dir) => {
+    Walk.walk(ROOT_PATH, (err, pathname, dirent) => {
+      if (err) throw err;
+
+      // ignore node_modules
+      if (dirent.isDirectory() && dirent.name.includes("node_modules")) {
+        return Promise.resolve(false);
+      }
+
+      // if is valid package
+      if (Package.isPackage(pathname)) {
         cb(
           new Package({
-            name: Package.read(getResolvePath(dir)).name,
-            resolvePath: getResolvePath(dir),
-            dirName: dir,
+            name: Package.read(pathname).name,
+            resolvePath: pathname,
+            dirName: pathname.slice(0, -(dirent.name.length + 1)),
           })
         );
-      });
+
+        return Promise.resolve();
+      }
+
+      return Promise.resolve();
+    });
   }
 
   exec(name) {

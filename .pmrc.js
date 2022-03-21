@@ -5,9 +5,9 @@ module.exports = {
     cmd: {
       beforeExec: function (cmd) {
         if (cmd === "npm i") {
-          return "tnpm ii";
+          return "cnpm ii";
         } else if (cmd === "npm uninstall") {
-          return "tnpm uninstall";
+          return "cnpm uninstall";
         }
       },
     },
