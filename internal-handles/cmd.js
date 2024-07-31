@@ -23,3 +23,6 @@ exports.cmd = (command) => (pm) => {
 
 exports.install = exports.cmd("npm i");
 exports.clean = exports.cmd("rm -rf node_modules");
+exports.test = exports.cmd("npm run test");
+exports.build = exports.cmd("npm run build");
+exports.publish = exports.cmd("npm run publish");
