@@ -3,7 +3,7 @@
 const path = require("path");
 const { argv } = require("process");
 const PackageManager = require("../src");
-const { install, clean } = require("../internal-handles/cmd");
+const { install, clean, test, build, publish } = require("../internal-handles/cmd");
 
 const cwd = process.cwd();
 let config = null;
@@ -19,6 +19,9 @@ const pm = new PackageManager({ handles: config.handles, config });
 // internal
 pm.load("install", install);
 pm.load("clean", clean);
+pm.load("test", test);
+pm.load("build", build);
+pm.load("publish", publish);
 
 if (argv[2] === "run") {
   pm.exec(argv[3]);
